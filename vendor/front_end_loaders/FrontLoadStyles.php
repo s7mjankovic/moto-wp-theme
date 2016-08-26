@@ -44,7 +44,7 @@ class FrontLoadStyles {
 			'magnific-css'         => $dir . '/css/magnific-popup.css',*/
 			'custom-css'         => $dir . '/assets/css/custom.css',
 			
-			'main-css'     => $dir . '/assets/bower_components/style.css'
+			/*'main-css'     => $dir . '/assets/bower_components/style.css' */
 		);
 	}
 }

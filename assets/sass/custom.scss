@@ -3,13 +3,15 @@
 @import 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i';
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400';
 
-$orange : #fe561c;
+$orange : #ff550d;
+$pointBreak1 : 420px;
 $pointBreak2 : 768px;
 $pointBreak3 : 1024px;
 $pointBreak4 : 1300px;
 $pointBreak5 : 1440px;
 
 $sectionPadding :70px 0;
+$sectionPaddingSmall :30px 0;
 /*
 $footerFontColor : #60646d;
 $whiteFont : #ffffff;
@@ -23,12 +25,18 @@ $whiteFont : #ffffff;
 		margin-top:30px;
 	}
 }
+#customize-controls img {
+		display: block;
+		width:auto !important;
+		margin: 5px auto !important;
+	}
 body {
     padding-top: 50px; 
     margin:0;
     padding: 0;
     font-size: 15px;
-
+    overflow-x: hidden;
+    width:100%;
 	h1,h2,h3,h4,h5,h6 {
 		font-family: 'Open Sans';
 	}
@@ -62,6 +70,9 @@ body {
 			@media (max-width:$pointBreak2) {
 				padding:5px 15px;
 			}
+			img {
+				max-height:60px;
+			}
 		}
 		ul {
 			@media (max-width:767px) {
@@ -71,7 +82,7 @@ body {
 		}
 		.navbar-nav {
 			li {
-				padding: 20px 7px 8px;
+				padding: 15px 7px 15px;
 				@media (max-width:$pointBreak2) {
 					padding: 5px 7px;
 				}
@@ -121,6 +132,12 @@ body {
 				padding-bottom: 13px;
 			}		
 		} 
+		.navbar-collapse {
+			@media (max-width:$pointBreak2) {
+				padding-left:5%;
+				padding-right: 5%;
+			}	
+		}
 	}
 	.navbar-scroll {
 		background-color: $orange;
@@ -130,17 +147,20 @@ body {
 
 /* HEADER */
 .moto-header {
+		position: relative;
 	    height: 700px;
+	    width:100%;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover; 
+	    -o-background-size: cover;
+	    background-size: cover;
+	    background-color: #ff550d;
 	    @media (min-width:$pointBreak3) and (max-width:$pointBreak4) {
 	    	height: 600px;
 	    }
-	    -webkit-background-size: cover;
-	    -moz-background-size: cover;
-	    background-size: cover;
-	    -o-background-size: cover;
 
 	    .header-caption {
-	    	padding: 220px 10px 10px;
+	    	padding: 140px 10px 10px;
 	    	width:100%;
 	    	text-align: center;
 	    	overflow: hidden;
@@ -202,6 +222,7 @@ body {
 /* CONTENT */
 	.content {
 		padding: 50px 0 15px;
+		overflow-x: hidden;
 		.content-h2 {
 			font-size: 35px;
 			color: #000;
@@ -265,45 +286,58 @@ body {
 			padding:$sectionPadding;
 			.pricing-inner {
 				padding: 40px 0;
-				.pricing-item {
-					padding: 0px;
-					height: 490px;
-					.pricing-item-inner {
-						padding: 40px;
-						color: #fff;
-						text-align: center;
-						.pricing-item-big-text {
-							text-transform: uppercase;
-							font-size: 25px;
-							font-weight: 600;
+				.row {
+					margin-right: 0px;
+    				margin-left: 0px;
+					.pricing-item {
+						padding: 0px;
+						height: 490px;
+						@media (max-width:$pointBreak2) {
+							padding-left:15px;
+							padding-right: 15px;
 						}
-						.pricing-item-price {
-							font-size: 70px;
-							font-weight: bold;
+						@media (min-width:$pointBreak2) and (max-width:$pointBreak3) {
+							height: 510px;
 						}
-						.pricing-item-list {
-							padding: 30px 0px;
-							p {
-								font-size: 14px;
-							}
-						}
-						.pricing-sign-in {
-							margin-top:25px;
-							a {
-								@extend .simple-button;
-								background-color: #fff;
-								color: $orange;
+						.pricing-item-inner {
+							padding: 40px;
+							color: #fff;
+							text-align: center;
+							.pricing-item-big-text {
+								text-transform: uppercase;
+								font-size: 25px;
 								font-weight: 600;
+							}
+							.pricing-item-price {
+								font-size: 70px;
+								font-weight: bold;
+							}
+							.pricing-item-list {
+								padding: 30px 0px;
+								p {
+									font-size: 14px;
+								}
+							}
+							.pricing-sign-in {
+								margin-top:25px;
+								a {
+									@extend .simple-button;
+									background-color: #fff;
+									color: $orange;
+									font-weight: 600;
+								}
 							}
 						}
 					}
+					.pricing-item-left {
+						background-color: #000;
+					}
+					.pricing-item-right {
+						background-color: $orange;
+					}
 				}
-				.pricing-item-left {
-					background-color: #000;
-				}
-				.pricing-item-right {
-					background-color: $orange;
-				}
+				
+				
 			}
 		}
 		/* end PRICING section */
@@ -315,6 +349,7 @@ body {
 				padding:40px 0;
 			}
 			.carousel {
+				height:100%;
 				.carousel-control {
 				    background-image: none;
 				    filter: none;  
@@ -326,6 +361,9 @@ body {
 				    @media (max-width:$pointBreak2) {
 				    	left: 1%;
 				    }
+				    @media (min-width:$pointBreak2) and (max-width:1010px) {
+						left: 5%;
+					}
 				}
 				.right.carousel-control {
 				    right: 2%;
@@ -334,21 +372,41 @@ body {
 				    @media (max-width:$pointBreak2) {
 				    	right: 1%;
 				    }
+				    @media (min-width:$pointBreak2) and (max-width:1010px) {
+						right: 5%;
+					}
 				}
 				
 				.carousel-inner {
 					.item {
 						img {
+							object-fit: cover;
+							-webkit-filter: grayscale(100%);
+					        -moz-filter: grayscale(100%);
+					        -o-filter: grayscale(100%);
+					        -ms-filter: grayscale(100%);
+					        filter: grayscale(100%); 
 							@media (max-width:$pointBreak2) {
-								width:50%;
+								width:40%;
 				    			display:block;
 				    			margin: 0 auto;
 				    		}
+				    		@media (min-width:$pointBreak2) and (max-width:1010px) {
+						    	width:30%;
+				    			display:block;
+				    			margin: 0 auto;
+						    }
 						}
 						.carousel-caption1 {
 							width: 60%;
 							margin: 100px auto 10px;
 							@media (max-width:$pointBreak2) {
+						    	margin: 40px auto 10px;
+						    }
+						    @media (min-width:$pointBreak2) and (max-width:$pointBreak3) {
+						    	margin: 30px auto 10px;
+						    }
+						    @media (min-width:$pointBreak3) and (max-width:$pointBreak4) {
 						    	margin: 40px auto 10px;
 						    }
 							p {
@@ -368,6 +426,9 @@ body {
 								font-size: 20px;
 								font-weight: 300;
 								line-height: 1.5;
+								@media (max-width:$pointBreak2) {
+									font-size: 17px;
+					    		}
 							}
 						}
 					}
@@ -502,9 +563,47 @@ body {
 			}
 		}
 		/* end FOOTER section */
+		.to-top {
+		    position: fixed;
+		    bottom: 8px;
+		    right: 50px;
+		    width: 50px;
+		    height: 50px;
+		    background-color: #fe561c;
+		    opacity: 1;
+		    z-index: 200000;
+		    display: none;
+		    text-align: center;
+		    vertical-align: middle;
+		    box-shadow: 0px 10px 10px -7px rgba(0,0,0,0.3);
+		    cursor: pointer;
+		    @media (max-width:440px) {
+				display: none !important;
+			}
+		    .arrow-up {
+			    width: 0;
+			    height: 0;
+			    border-left: 16px solid transparent;
+			    border-right: 16px solid transparent;
+			    border-bottom: 18px solid #fff;
+			    margin-left:9px;
+			    margin-top: 15px;
+			 }
+		}
+	
 
+	}/* end CONTENT */
+
+	.copyright {
+		text-align: center;
+		background-color: #fe561c;
+		padding: 5px;
+		color: #fff;
+		a {
+			color: #000;
+		}
 	}
-/* end CONTENT */
+
 /*
 @media (max-width: 800px) {
   .navbar-header {
@@ -543,5 +642,7 @@ body {
   }
 }
 */
+
 }
+
 

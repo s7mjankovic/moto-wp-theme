@@ -9,12 +9,12 @@
                     <?php $testimonialData = get_post_meta($post->ID,'testimonial', true); ?>
                     <div class="item <?php if( $the_slides_query->current_post == 0 ) echo 'active' ?>">
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-md-3">
                             
                                 <img class="img-responsive" src="<?php echo the_post_thumbnail_url( ); ?>">
                            
                         </div>
-                        <div class="col-sm-9">
+                        <div class="col-md-9">
                             <div class="carousel-caption1">
                                 <?php if (get_the_title()) :?>
                                     <p class="testimonial-client-name"><?php the_title(); ?></p>

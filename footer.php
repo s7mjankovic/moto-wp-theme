@@ -1,4 +1,5 @@
         <!-- FOOTER section -->
+        <div class="to-top" style="display: block;"><div class="arrow-up"></div> </div>
         <div class="footer">
             <div class="container">
                 <div class="row">
@@ -35,7 +36,7 @@
                 <div class="row credentials">
                     <div class="col-sm-4 footer-logo">
                         <img class="img-responsive" src="<?php echo moto_footer_logo();?>" alt="MOTO - CORPORATE VEHICLE AND ASSET MANAGEMENT SOLUTIONS">
-                        <p>&copy; <?php echo date('Y'); ?> MOTO</p>
+                        <!--<p>&copy; <?php echo date('Y'); ?> MOTO</p>-->
                         <a href="#">Terms of service</a>
                         <a href="#">Privacy policy</a>
                     </div>
@@ -49,36 +50,24 @@
                        
                     </div>
                 </div>
+                
 
             </div>
         </div>
         <!-- END FOOTER section -->
 
-
     </div><!-- end content -->
+
+    <!-- COPYRIGHT section -->
+    <div class="copyright">
+            © <?php echo date('Y'); ?> MOTO All Rights Reserved Powerd by <a href="http://s7designcreative.com/" target="_blank">S7 Design</a>
+    </div>
+    <!-- END COPYRIGHT section -->
 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <?php wp_footer(); ?>
-    <script>
-        $(document).on('scroll',function() {
-            var scroll = jQuery(window).scrollTop();
-            var width = jQuery(document).width();
-
-            if(width >= 790) {
-                if (scroll > 100) {
-                    $(".navbar").addClass("navbar-scroll");
-                } else {
-                    $(".navbar").removeClass("navbar-scroll");
-                }
-            } else {
-                if (scroll > 100) {
-                    $(".navbar").addClass("navbar-scroll");
-                }
-            }
-        });
-    </script>
 </body>
 
 </html>

@@ -33,16 +33,22 @@ class FrontLoadScripts {
 
 		return array(
 			'bootstrap-script'    => array(
-				'url'     => $dir . '/assets/js/bootstrap.min.js',
+				'url'     => $dir . '/assets/js/bootstrap.js',
 				'dep'     => array( 'jquery' ),
 				'version' => '1.0',
 				'footer'  => true,
 			),
-			
-			'custom-script'       => array( 'url'     => $dir . '/assets/js/custom.js',
-			                                'dep'     => array( 'jquery' ),
-			                                'version' => '1.0',
-			                                'footer'  => true,
+			'custom-script'       => array( 
+				'url'     => $dir . '/assets/js/custom.js',
+			    'dep'     => array( 'jquery' ),
+			    'version' => '1.0',
+			    'footer'  => true,
+			),
+			'ie10-viewport-bug-workaround' => array( 
+			    'url'     => $dir . '/assets/js/ie10-viewport-bug-workaround.js',
+                'dep'     => array( 'jquery' ),
+                'version' => '1.0',
+                'footer'  => true,
 			),
 			/*
 			'owl-carousel-script' => array( 'url'     => $dir . '/assets/owl-carousel/owl.carousel.min.js',
